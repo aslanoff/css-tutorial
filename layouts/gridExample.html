@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        /**
+            inline-grid - строчные
+            subgrid - вложенный
+            grid - блочный
+          **/
+        display: grid;
+        grid-gap: 5px;
+        grid-template-areas:
+          "header"
+          "section"
+          "aside-1"
+          "aside-2"
+          "footer";
+      }
+      .container > * {
+        background-color: mediumspringgreen;
+        font-size: 80px;
+      }
+      header {
+        grid-area: header;
+      }
+      aside:nth-child(1) {
+        grid-area: aside-1;
+      }
+      section {
+        grid-area: section;
+      }
+      aside:nth-child(2) {
+        grid-area: aside-2;
+      }
+      footer {
+        grid-area: footer;
+      }
+      @media (min-width: 700px) {
+        .container {
+          grid-template-areas:
+            "header header header"
+            "aside-1 section aside-2"
+            "footer footer footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <aside>Aside 1</aside>
+      <section>Section</section>
+      <aside>Aside 2</aside>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
